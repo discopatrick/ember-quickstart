@@ -4,6 +4,10 @@ import moduleForAcceptance from 'ember-quickstart/tests/helpers/module-for-accep
 moduleForAcceptance('Acceptance | list rentals');
 
 test('should show rentals as the home page', function (assert) {
+  visit('/');
+  andThen(function() {
+    assert.equal(currentURL(), '/rentals', 'should redirect automatically');
+  });
 });
 
 test('should link to information about the company.', function (assert) {
